@@ -1,0 +1,88 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+
+# Virtualenv
+env/
+venv/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+* * __pycache__/
+* *.mo
+* *.pot
+* *.py[cod]
+* local_settings.py
+* db.sqlite3
+
+# SQLite
+*.sqlite3
+
+# IDE Specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime*
+
+# Mac OS
+.DS_Store
+
+# Docker
+*.log
+*.pid
+__pycache__/
+*.bak
+*.backup
+*.swp
+*.swo
+*.tmp
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Test files and coverage reports
+htmlcov/
+.coverage
+.tox/
+.pytest_cache/
+
+# Static and Media Files
+staticfiles/
+media/
+
+# Node.js
+node_modules/
+*.log
+
+# Environment Variables
+.env
+.env.*
+
+# Compiled Files
+*.dll
+*.dylib
+*.exe
+*.o
+*.a
+*.lib
+
+# Build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Logs
+*.log
+*.out
+*.err
+
+# System Files
+Thumbs.db
+desktop.ini
+
