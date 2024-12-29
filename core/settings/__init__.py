@@ -1,12 +1,21 @@
-from decouple import config
+import os
+from pathlib import Path
 
-DJANGO_ENVIRONMENT = config("ENVIRONMENT", "dev")
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+
+DJANGO_ENVIRONMENT = os.getenv("ENVIRONMENT", "dev")
 
 if DJANGO_ENVIRONMENT == "dev":
-    from .dev import *
+    from .dev import *  # noqa: F403
 elif DJANGO_ENVIRONMENT == "prod":
-    from .prod import *
+    from .prod import *  # noqa: F403
 # elif ENVIRONMENT == "staging":
-#     from .staging import *
+#     from .staging import * # noqa: F403
 else:
     raise ValueError("Invalid environment specified.")

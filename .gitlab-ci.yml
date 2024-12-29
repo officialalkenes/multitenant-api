@@ -1,0 +1,38 @@
+stages:
+  - lint
+  - test
+  - deploy
+
+variables:
+  PYTHON_VERSION: "3.9"
+
+ruff_lint:
+  stage: lint
+  image: python:3.11-slim
+  script:
+    - pip install ruff
+    - ruff check .
+
+test:
+  stage: test
+  image: python:$PYTHON_VERSION
+  services:
+    - postgres:13
+  variables:
+    POSTGRES_DB: test_db
+    POSTGRES_USER: test_user
+    POSTGRES_PASSWORD: test_password
+    POSTGRES_HOST: postgres
+  script:
+    - pip install -r requirements.txt
+    - python manage.py makemigrations
+    - python manage.py migrate
+    - python manage.py test
+
+deploy:
+  stage: deploy
+  only:
+    - main
+  script:
+    - echo "Deploying to production server"
+    # Add deployment script or commands here

@@ -12,7 +12,7 @@ charset-normalizer==3.4.1
     # via requests
 dj-database-url==2.3.0
     # via -r requirements/prod.in
-django==5.1.4
+django==4.2
     # via
     #   -r requirements/prod.in
     #   dj-database-url
@@ -38,7 +38,7 @@ psycopg[binary]==3.2.3
     # via -r requirements/prod.in
 psycopg-binary==3.2.3
     # via psycopg
-python-decouple==3.8
+python-dotenv==1.0.1
     # via -r requirements/prod.in
 pytz==2024.2
     # via drf-yasg

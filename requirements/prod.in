@@ -1,6 +1,6 @@
-Django>=5.1,<5.2
+django>=4.0,<=4.2
 gunicorn
-python-decouple
+python-dotenv
 psycopg[binary]
 dj-database-url
 requests

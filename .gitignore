@@ -41,9 +41,9 @@ __pycache__/
 *.swp
 *.swo
 *.tmp
-Dockerfile
+# Dockerfile
 .dockerignore
-docker-compose.yml
+# docker-compose.yml
 
 # Test files and coverage reports
 htmlcov/
@@ -85,4 +85,3 @@ dist/
 # System Files
 Thumbs.db
 desktop.ini
-
