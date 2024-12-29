@@ -38,7 +38,7 @@ psycopg[binary]==3.2.3
     # via -r requirements/prod.in
 psycopg-binary==3.2.3
     # via psycopg
-python-decouple==3.8
+python-dotenv==1.0.1
     # via -r requirements/prod.in
 pytz==2024.2
     # via drf-yasg
