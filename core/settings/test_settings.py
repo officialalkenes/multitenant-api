@@ -1,13 +1,18 @@
+from urllib.parse import urlparse
 from .base import *  # noqa
 
-# Local database configuration
+tmpPostgres = urlparse(os.getenv("DATABASE_URL"))  # noqa
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",  # noqa: F405
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": tmpPostgres.path.replace("/", ""),
+        "USER": tmpPostgres.username,
+        "PASSWORD": tmpPostgres.password,
+        "HOST": tmpPostgres.hostname,
+        "PORT": 5432,
     }
 }
-
 # Debug mode
 DEBUG = True
 
