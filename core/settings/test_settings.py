@@ -1,8 +1,10 @@
+import os
 from urllib.parse import urlparse
 from .base import *  # noqa
 
-tmpPostgres = urlparse(os.getenv("DATABASE_URL"))  # noqa
 
+tmpPostgres = urlparse(os.getenv("DATABASE_URL"))  # noqa
+print(tmpPostgres)
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -13,6 +15,7 @@ DATABASES = {
         "PORT": 5432,
     }
 }
+
 # Debug mode
 DEBUG = True
 
