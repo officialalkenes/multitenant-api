@@ -27,7 +27,7 @@ apply_migrations() {
 # Start the Gunicorn server
 start_server() {
     echo "Starting Gunicorn server..."
-    gunicorn ${PROJ_NAME}.wsgi:application --bind 0.0.0.0:8000
+    gunicorn core.wsgi:application --bind 0.0.0.0:8000
 }
 
 # Execute functions
