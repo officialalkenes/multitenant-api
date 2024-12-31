@@ -29,6 +29,7 @@ start_server() {
     echo "Starting Gunicorn server..."
     gunicorn core.wsgi:application --bind 0.0.0.0:8000
 }
+export DJANGO_SETTINGS_MODULE=core.settings
 
 # Execute functions
 wait_for_db
