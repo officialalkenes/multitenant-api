@@ -3,6 +3,9 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+# Set the Django settings module environment variable
+export DJANGO_SETTINGS_MODULE=core.settings
+
 # Function to wait for the PostgreSQL database to be ready
 wait_for_db() {
     echo "Waiting for PostgreSQL to be ready at $DB_HOST:$DB_PORT..."
@@ -29,7 +32,6 @@ start_server() {
     echo "Starting Gunicorn server..."
     gunicorn core.wsgi:application --bind 0.0.0.0:8000
 }
-export DJANGO_SETTINGS_MODULE=core.settings
 
 # Execute functions
 wait_for_db
