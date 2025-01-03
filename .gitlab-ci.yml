@@ -33,6 +33,7 @@ deploy:
   stage: deploy
   only:
     - main
+
   script:
-    - echo "Deploying to production server"
-    # Add deployment script or commands here
+    - echo "Deploying to Hostinger..."
+    - ssh user@${VPS_SERVER} 'cd ${BASE_FOLDER} && git pull && docker-compose down && docker-compose up -d'
